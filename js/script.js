@@ -24,8 +24,15 @@ for (var university of univerList) {
 elBtn.addEventListener("click", function(e) {
   e.preventDefault();
 
-
-  if(elBall.value >= 0 && elBall.value < superContractBall) {
+  if(elBall.value == ""){
+    resultBox.classList.remove("alert-danger")
+    resultBox.classList.remove("alert-warning")
+    resultBox.classList.remove("alert-success")
+    resultHeading.textContent = "";
+    resultText.textContent = "";
+    // return;
+  }
+ else if(elBall.value >= 0 && elBall.value < superContractBall) {
     resultBox.classList.add("alert-danger");
     resultHeading.textContent = "Afsus!"
     resultText.textContent = `Siz ${elUnivers.value} Universitetiga talabalikka tavsiya etilmadingiz`;
@@ -48,7 +55,7 @@ elBtn.addEventListener("click", function(e) {
   }else if(elBall.value < 0 || elBall.value > 189){
     resultBox.classList.add("alert-danger");
     resultHeading.textContent = "Kechirasiz!"
-    resultText.textContent = `Siz noto'g'ri ball kiritdingiz`;
+    resultText.textContent = `Siz noto'g'ri qiymat kiritdingiz`;
   }
 
 })
